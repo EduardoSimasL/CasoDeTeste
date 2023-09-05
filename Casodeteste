@@ -1,0 +1,48 @@
+Projeto:
+- Identificação do projeto
+
+Caso de Teste:
+- Número do caso de teste
+
+Tipo:
+- Tipo de caso de teste (FUNCIONAL, SEGURANÇA, VOLUME, ESTRESSE, CARGA, etc.)
+
+Requisito Funcional Correspondente:
+- RF001 - Autenticação de Usuário
+
+Propósito:
+- Validar o processo de autenticação do usuário no aplicativo.
+
+Descrição Geral:
+- Este teste visa garantir que o sistema se comporte corretamente durante o processo de autenticação de um usuário. Ele aborda cenários de login com credenciais válidas e inválidas.
+
+Insumos para o Caso de Teste:
+- Os dados do usuário, incluindo nome de usuário e senha válidos e inválidos, devem estar disponíveis para teste.
+
+Roteiro para a Realização do Teste:
+1. Iniciar o aplicativo.
+2. Inserir nome de usuário e senha válidos.
+3. Clicar no botão de login.
+4. Verificar se o sistema redireciona corretamente o usuário para a tela principal e exibe a mensagem "Cliente salvo com Sucesso".
+5. Repetir os passos 1 a 4 usando credenciais inválidas.
+6. Verificar se o sistema trata adequadamente as credenciais inválidas, exibe a mensagem "CPF inválido", muda a cor do campo de CPF na interface e permite a correção.
+7. Registrar os resultados e quaisquer problemas encontrados.
+
+Cenários de Teste:
+1. Tratar a entrada de um número de CPF correto
+   - Objetivo específico: Validar a entrada de um número de CPF correto.
+   - Especificações de Entrada ou Ações:
+     - Inserir dados completos do cliente.
+     - Usar um número de CPF válido.
+     - Clicar no botão de login.
+   - Saída Esperada:
+     - O sistema deve validar o CPF do cliente, salvar os dados no BD e exibir a mensagem "Cliente salvo com Sucesso".
+
+2. Tratar a entrada de um número de CPF incorreto
+   - Objetivo específico: Validar a entrada de um número de CPF incorreto.
+   - Especificações de Entrada ou Ações:
+     - Inserir dados completos do cliente.
+     - Usar um número de CPF inválido.
+     - Clicar no botão de login.
+   - Saída Esperada:
+     - O sistema deve tentar validar o CPF, exibir a mensagem "CPF inválido", mudar a cor do campo de CPF e permitir a correção.
