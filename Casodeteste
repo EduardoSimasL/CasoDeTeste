@@ -1,48 +1,74 @@
-Projeto:
-- Identificação do projeto
+Caso de Teste: Autenticação de Usuário - Login com Credenciais Válidas
 
-Caso de Teste:
-- Número do caso de teste
+Objetivo: Verificar se o usuário consegue fazer login no aplicativo utilizando credenciais válidas.
 
-Tipo:
-- Tipo de caso de teste (FUNCIONAL, SEGURANÇA, VOLUME, ESTRESSE, CARGA, etc.)
+Pré-condições:
 
-Requisito Funcional Correspondente:
-- RF001 - Autenticação de Usuário
+O aplicativo está instalado e aberto na tela de login.
+O usuário possui uma conta registrada com credenciais válidas.
+Passos:
 
-Propósito:
-- Validar o processo de autenticação do usuário no aplicativo.
+Abra o aplicativo.
+Insira um nome de usuário válido no campo designado.
+Insira uma senha válida no campo de senha.
+Toque no botão "Entrar" para efetuar o login.
+Resultados Esperados:
 
-Descrição Geral:
-- Este teste visa garantir que o sistema se comporte corretamente durante o processo de autenticação de um usuário. Ele aborda cenários de login com credenciais válidas e inválidas.
+O sistema deve autenticar o usuário com sucesso.
+O usuário deve ser redirecionado para a tela principal do aplicativo.
+Não deve haver mensagens de erro durante o processo de login.
+O tempo de resposta do login deve ser rápido, conforme especificado nos requisitos não funcionais.
+Caso de Teste: Autenticação de Usuário - Tratamento de Credenciais Inválidas
 
-Insumos para o Caso de Teste:
-- Os dados do usuário, incluindo nome de usuário e senha válidos e inválidos, devem estar disponíveis para teste.
+Objetivo: Verificar se o aplicativo trata corretamente tentativas de login com credenciais inválidas.
 
-Roteiro para a Realização do Teste:
-1. Iniciar o aplicativo.
-2. Inserir nome de usuário e senha válidos.
-3. Clicar no botão de login.
-4. Verificar se o sistema redireciona corretamente o usuário para a tela principal e exibe a mensagem "Cliente salvo com Sucesso".
-5. Repetir os passos 1 a 4 usando credenciais inválidas.
-6. Verificar se o sistema trata adequadamente as credenciais inválidas, exibe a mensagem "CPF inválido", muda a cor do campo de CPF na interface e permite a correção.
-7. Registrar os resultados e quaisquer problemas encontrados.
+Pré-condições:
 
-Cenários de Teste:
-1. Tratar a entrada de um número de CPF correto
-   - Objetivo específico: Validar a entrada de um número de CPF correto.
-   - Especificações de Entrada ou Ações:
-     - Inserir dados completos do cliente.
-     - Usar um número de CPF válido.
-     - Clicar no botão de login.
-   - Saída Esperada:
-     - O sistema deve validar o CPF do cliente, salvar os dados no BD e exibir a mensagem "Cliente salvo com Sucesso".
+O aplicativo está instalado e aberto na tela de login.
+Passos:
 
-2. Tratar a entrada de um número de CPF incorreto
-   - Objetivo específico: Validar a entrada de um número de CPF incorreto.
-   - Especificações de Entrada ou Ações:
-     - Inserir dados completos do cliente.
-     - Usar um número de CPF inválido.
-     - Clicar no botão de login.
-   - Saída Esperada:
-     - O sistema deve tentar validar o CPF, exibir a mensagem "CPF inválido", mudar a cor do campo de CPF e permitir a correção.
+Abra o aplicativo.
+Insira um nome de usuário inválido no campo designado.
+Insira uma senha inválida no campo de senha.
+Toque no botão "Entrar" para tentar efetuar o login.
+Resultados Esperados:
+
+O sistema deve exibir uma mensagem de erro indicando que as credenciais são inválidas.
+O usuário não deve ser autenticado.
+O tempo de resposta do sistema durante essa tentativa deve atender aos requisitos não funcionais.
+Caso de Teste: Recuperação de Senha - Solicitação de Recuperação de Senha
+
+Objetivo: Verificar se o usuário pode solicitar a recuperação de senha com sucesso.
+
+Pré-condições:
+
+O aplicativo está instalado e aberto na tela de login.
+O usuário possui uma conta registrada.
+Passos:
+
+Na tela de login, toque na opção "Esqueci minha senha".
+Insira o e-mail registrado na conta.
+Toque no botão "Enviar" para solicitar a recuperação de senha.
+Resultados Esperados:
+
+O sistema deve enviar um e-mail de recuperação de senha para o endereço especificado.
+O usuário deve receber o e-mail com sucesso.
+O e-mail deve conter um link válido para redefinir a senha.
+Caso de Teste: Recuperação de Senha - Redefinição de Senha
+
+Objetivo: Verificar se o usuário pode redefinir sua senha com sucesso.
+
+Pré-condições:
+
+O usuário recebeu o e-mail de recuperação de senha com sucesso.
+Passos:
+
+Abra o e-mail de recuperação de senha recebido.
+Clique no link de redefinição de senha fornecido.
+Siga as instruções para criar uma nova senha.
+Tente fazer login no aplicativo com a nova senha.
+Resultados Esperados:
+
+O sistema deve permitir que o usuário redefina sua senha com sucesso.
+Após a redefinição, o usuário deve conseguir fazer login com a nova senha.
+O tempo de resposta do sistema durante esse processo deve atender aos requisitos não funcionais.
