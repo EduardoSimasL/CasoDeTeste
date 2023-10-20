@@ -1,0 +1,42 @@
+//CASO SUCESSO
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    // Declaração de variáveis
+    char nomeUsuario[] = "usuario";
+    char senha[] = "senha123";
+    char usuarioValido[] = "usuario";
+    char senhaValida[] = "senha123";
+
+    // Verificação de credenciais
+    if (strcmp(nomeUsuario, usuarioValido) == 0 && strcmp(senha, senhaValida) == 0) {
+        // Credenciais válidas, login bem-sucedido
+        printf("Caso de Teste 2 - Teste de Login Válido: SUCESSO\n");
+    } else {
+        // Credenciais inválidas, login falhou
+        printf("Caso de Teste 2 - Teste de Login Válido: FALHA\n");
+    }
+
+    return 0;
+}
+
+//CASO FALHA
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char nomeUsuario[] = "usuario";
+    char senha[] = "senhaerrada"; //SENHA ERRADA
+    char usuarioValido[] = "usuario";
+    char senhaValida[] = "senha123";
+
+    // Verificação de credenciais
+    if (strcmp(nomeUsuario, usuarioValido) == 0 && strcmp(senha, senhaValida) == 0) {
+        printf("Caso de Teste 3 - Teste de Login Inválido: SUCESSO\n");
+    } else {
+        printf("Caso de Teste 3 - Teste de Login Inválido: FALHA\n");
+    }
+
+    return 0;
+}
